@@ -239,7 +239,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/BA로고.png" alt="BLUE APEX Logo" className="h-12 w-auto" />
-            <span className="font-bold tracking-widest text-apex-blue text-lg">BLUE APEX</span>
+            <span className="font-extrabold tracking-widest text-apex-blue text-xl">BLUE APEX</span>
           </div>
           <a href="#contact" className="text-sm font-medium px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
             Contact Us
@@ -726,7 +726,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <img src="/BA로고.png" alt="BLUE APEX Logo" className="h-12 w-auto" />
-            <span className="font-bold tracking-widest text-apex-blue text-lg">BLUE APEX</span>
+            <span className="font-extrabold tracking-widest text-apex-blue text-xl">BLUE APEX</span>
           </div>
           <p>© 2026 <span className="text-apex-blue font-bold">BLUE APEX</span>. All rights reserved.</p>
         </div>
