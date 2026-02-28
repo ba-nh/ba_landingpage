@@ -586,14 +586,16 @@ export default function App() {
               }
             ].map((member, i) => (
               <div key={i} className="group cursor-pointer flex flex-col h-full">
-                <div className="relative w-1/2 aspect-[3/4] rounded-2xl overflow-hidden mb-6 bg-gray-100 shrink-0">
-                  <img 
-                    src={member.img} 
-                    alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-1/2 aspect-[3/4] rounded-2xl overflow-hidden bg-gray-100 shrink-0">
+                    <img 
+                      src={member.img} 
+                      alt={member.name}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                  </div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-apex-blue font-medium text-sm uppercase tracking-wider mb-4">{member.role}</p>
