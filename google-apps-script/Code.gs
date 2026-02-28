@@ -2,7 +2,7 @@
  * Google 시트에 문의 데이터를 저장하는 Web App 스크립트
  *
  * 설정 방법:
- * 1. 새 Google 시트를 만들고, 첫 행에 열 이름을 입력합니다 (예: 일시 | 관심분야 | 이메일)
+ * 1. 새 Google 시트를 만들고, 첫 행에 열 이름을 입력합니다 (예: 일시 | 관심분야 | 이메일 | 기타문의)
  * 2. 확장 프로그램 → Apps Script
  * 3. 이 파일 내용을 붙여넣고 저장
  * 4. 배포 → 새 배포 → 유형: 웹 앱
@@ -18,9 +18,10 @@ function doPost(e) {
 
     var interest = params.interest || '';
     var email = params.email || '';
+    var inquiry = params.inquiry || '';
     var timestamp = new Date();
 
-    sheet.appendRow([timestamp, interest, email]);
+    sheet.appendRow([timestamp, interest, email, inquiry]);
 
     // iframe으로 제출한 경우 이 HTML이 보입니다. 필요하면 메시지 수정 가능
     return ContentService.createTextOutput(
@@ -31,13 +32,4 @@ function doPost(e) {
       JSON.stringify({ success: false, error: err.toString() })
     ).setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-/**
- * GET 요청도 테스트용으로 받을 수 있습니다 (선택 사항)
- */
-function doGet(e) {
-  return ContentService.createTextOutput(JSON.stringify({
-    message: 'Use POST with form fields: interest, email'
-  })).setMimeType(ContentService.MimeType.JSON);
 }

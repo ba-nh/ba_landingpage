@@ -64,12 +64,13 @@ const MotionTrails = () => {
   );
 };
 
-const SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL as string | undefined;
+const SCRIPT_URL = (import.meta.env.VITE_GOOGLE_SCRIPT_URL as string | undefined)?.trim() || undefined;
 
 const ContactForm = () => {
   const [interest, setInterest] = useState('');
   const [customInterest, setCustomInterest] = useState('');
   const [email, setEmail] = useState('');
+  const [inquiry, setInquiry] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -84,6 +85,7 @@ const ContactForm = () => {
         setInterest('');
         setCustomInterest('');
         setEmail('');
+        setInquiry('');
       }
     };
     window.addEventListener('message', handleMessage);
@@ -94,7 +96,7 @@ const ContactForm = () => {
     e.preventDefault();
     const interestValue = interest === 'other' ? customInterest : interest;
     if (!SCRIPT_URL) {
-      setSubmitError('Google 시트 연동 URL이 설정되지 않았습니다. .env에 VITE_GOOGLE_SCRIPT_URL을 넣어주세요.');
+      setSubmitError('Google 시트 연동 URL이 설정되지 않았습니다. .env에 VITE_GOOGLE_SCRIPT_URL을 넣은 뒤 개발 서버를 재시작(npm run dev)해 주세요.');
       return;
     }
     setSubmitError(null);
@@ -103,8 +105,10 @@ const ContactForm = () => {
     if (form) {
       const interestInput = form.querySelector<HTMLInputElement>('input[name="interest"]');
       const emailInput = form.querySelector<HTMLInputElement>('input[name="email"]');
+      const inquiryInput = form.querySelector<HTMLInputElement>('input[name="inquiry"]');
       if (interestInput) interestInput.value = interestValue;
       if (emailInput) emailInput.value = email;
+      if (inquiryInput) inquiryInput.value = inquiry;
       form.submit();
     }
     // 응답이 오지 않으면 8초 후 로딩만 해제 (재제출 가능)
@@ -123,6 +127,7 @@ const ContactForm = () => {
       >
         <input type="text" name="interest" readOnly aria-hidden />
         <input type="email" name="email" readOnly aria-hidden />
+        <input type="text" name="inquiry" readOnly aria-hidden />
       </form>
       <iframe
         ref={iframeRef}
@@ -185,8 +190,26 @@ const ContactForm = () => {
         </div>
       </div>
 
+      <div className="flex flex-col gap-2">
+        <label className="text-sm font-medium text-gray-400">기타 문의 사항 <span className="text-gray-500 font-normal">(선택)</span></label>
+        <textarea
+          value={inquiry}
+          onChange={(e) => setInquiry(e.target.value)}
+          placeholder="추가로 전달하고 싶은 내용이 있으면 입력해 주세요."
+          rows={4}
+          className="w-full bg-apex-surface border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-apex-blue transition-colors resize-y min-h-[100px]"
+        />
+      </div>
+
       {submitSuccess && (
-        <p className="text-green-400 text-sm">문의가 접수되었습니다. 감사합니다.</p>
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="rounded-xl border border-green-500/30 bg-green-500/10 px-5 py-4 text-center"
+        >
+          <p className="text-green-400 font-medium">문의가 접수되었습니다.</p>
+          <p className="text-green-400/90 text-sm mt-1">빠른 시일 내에 연락드리겠습니다. 감사합니다.</p>
+        </motion.div>
       )}
       {submitError && (
         <p className="text-red-400 text-sm">{submitError}</p>
