@@ -599,7 +599,7 @@ export default function App() {
                 </div>
                 <h3 className="text-xl font-bold mb-1 text-center">{member.name}</h3>
                 <p className="text-apex-blue font-medium text-sm uppercase tracking-wider mb-4 text-center">{member.role}</p>
-                <ul className="space-y-2 mt-4 ml-16">
+                <ul className="space-y-2 mt-4 ml-4 md:ml-16">
                   {member.history.map((line, j) => (
                     <li key={j} className="text-sm text-gray-400 leading-snug flex items-start gap-2">
                       <span className="text-apex-blue mt-1 shrink-0">•</span>
