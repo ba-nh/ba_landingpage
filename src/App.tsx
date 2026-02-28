@@ -200,7 +200,9 @@ const ContactForm = () => {
           className="rounded-xl border border-green-500/30 bg-green-500/10 px-5 py-4 text-center"
         >
           <p className="text-green-400 font-bold text-lg">완료되었습니다.</p>
-          <p className="text-green-400/90 text-sm mt-1">문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다. 감사합니다.</p>
+          <p className="text-green-400/90 text-sm mt-1">문의가 접수되었습니다.</p>
+          <p className="text-green-400/90 text-sm mt-0.5">빠른 시일 내에 연락드리겠습니다.</p>
+          <p className="text-green-400/90 text-sm mt-0.5">감사합니다.</p>
         </motion.div>
       )}
       {submitError && (
@@ -710,7 +712,7 @@ export default function App() {
         <div className="max-w-3xl mx-auto relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Ready to Move Forward?</h2>
           <p className="text-xl text-gray-400 mb-12 break-keep">
-            <span className="text-apex-blue font-bold">BLUE APEX</span>와 함께 모빌리티의 지능화를 시작하세요.
+            <span className="text-apex-blue font-bold">BLUE APEX</span>와 함께, 더 안전하고 효율적인 모빌리티의 미래를 시작하세요.
           </p>
           
           <div className="bg-apex-surface/80 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-3xl text-left">
