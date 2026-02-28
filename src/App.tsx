@@ -77,21 +77,6 @@ const ContactForm = () => {
   const formRef = React.useRef<HTMLFormElement>(null);
   const iframeRef = React.useRef<HTMLIFrameElement>(null);
 
-  React.useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.data?.type === 'form-submitted' && event.data?.success) {
-        setSubmitSuccess(true);
-        setIsSubmitting(false);
-        setInterest('');
-        setCustomInterest('');
-        setEmail('');
-        setInquiry('');
-      }
-    };
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const interestValue = interest === 'other' ? customInterest : interest;
@@ -111,8 +96,15 @@ const ContactForm = () => {
       if (inquiryInput) inquiryInput.value = inquiry;
       form.submit();
     }
-    // 응답이 오지 않으면 8초 후 로딩만 해제 (재제출 가능)
-    setTimeout(() => setIsSubmitting(false), 8000);
+    // iframe 응답 없이 제출만 하면 완료로 처리 (잠깐 '제출 중' 표시 후 완료 문구)
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setInterest('');
+      setCustomInterest('');
+      setEmail('');
+      setInquiry('');
+    }, 1200);
   };
 
   return (
@@ -207,8 +199,8 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           className="rounded-xl border border-green-500/30 bg-green-500/10 px-5 py-4 text-center"
         >
-          <p className="text-green-400 font-medium">문의가 접수되었습니다.</p>
-          <p className="text-green-400/90 text-sm mt-1">빠른 시일 내에 연락드리겠습니다. 감사합니다.</p>
+          <p className="text-green-400 font-bold text-lg">완료되었습니다.</p>
+          <p className="text-green-400/90 text-sm mt-1">문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다. 감사합니다.</p>
         </motion.div>
       )}
       {submitError && (
