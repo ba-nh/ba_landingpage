@@ -261,8 +261,8 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <h2 className="text-apex-blue font-mono text-sm md:text-base tracking-[0.2em] uppercase mb-6">
-              Blue Apex
+            <h2 className="text-apex-blue font-mono font-bold text-xl md:text-3xl tracking-[0.2em] uppercase mb-6">
+              BLUE APEX
             </h2>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] mb-8">
               Where Intelligence <br/>
@@ -358,7 +358,7 @@ export default function App() {
       <section className="py-20 md:py-32 px-6 bg-white text-apex-dark">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-apex-blue font-mono text-sm tracking-[0.2em] uppercase mb-4">Our Solutions</h2>
+            <h2 className="text-apex-blue font-mono font-bold text-xl md:text-2xl tracking-[0.2em] uppercase mb-4">Our Solutions</h2>
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight">안전과 효율의 극대화</h3>
           </div>
 
