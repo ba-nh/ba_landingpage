@@ -597,8 +597,8 @@ export default function App() {
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-apex-blue font-medium text-sm uppercase tracking-wider mb-4">{member.role}</p>
+                <h3 className="text-xl font-bold mb-1 text-center">{member.name}</h3>
+                <p className="text-apex-blue font-medium text-sm uppercase tracking-wider mb-4 text-center">{member.role}</p>
                 <ul className="space-y-2 mt-4">
                   {member.history.map((line, j) => (
                     <li key={j} className="text-sm text-gray-400 leading-snug flex items-start gap-2">
