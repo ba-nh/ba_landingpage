@@ -724,13 +724,25 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-white/5 text-center text-gray-500 text-sm">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src="/BA로고.png" alt="BLUE APEX Logo" className="h-12 w-auto" />
-            <span className="font-extrabold tracking-widest text-apex-blue text-xl">BLUE APEX</span>
+      <footer className="py-10 px-6 border-t border-white/5 text-gray-500 text-sm">
+        <div className="max-w-7xl mx-auto flex flex-col gap-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <img src="/BA로고.png" alt="BLUE APEX Logo" className="h-12 w-auto" />
+              <span className="font-extrabold tracking-widest text-apex-blue text-xl">BLUE APEX</span>
+            </div>
+            <p>© 2026 <span className="text-apex-blue font-bold">BLUE APEX</span>. All rights reserved.</p>
           </div>
-          <p>© 2026 <span className="text-apex-blue font-bold">BLUE APEX</span>. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center md:justify-between gap-2 pt-6 border-t border-white/5 text-xs text-gray-600">
+            <div className="flex flex-col md:flex-row items-center gap-1 md:gap-4">
+              <span>상호명: (주)블루에이펙스</span>
+              <span className="hidden md:inline text-white/10">|</span>
+              <span>대표자: 김병건</span>
+              <span className="hidden md:inline text-white/10">|</span>
+              <span>사업자등록번호: 640-86-04185</span>
+            </div>
+            <span>대표전화: 070-8019-3262</span>
+          </div>
         </div>
       </footer>
     </div>
