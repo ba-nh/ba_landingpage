@@ -547,8 +547,8 @@ export default function App() {
                   '한양대학교 기계공학 학사 (2019)',
                   'SK 하이닉스 공정 TL (2019 ~ 2020)',
                   '한양대학교 자동차전자제어공학 석사 (2022)',
-                  '현대자동차그룹 친환경 차량 제어기 연구원 (2022 ~ )',
-                  '현대자동차그룹 사내 스타트업 리더(2025 ~ )',
+                  '현대자동차그룹 친환경 차량 제어기 연구원 (2022 ~ 2026)',
+                  '현대자동차그룹 사내 스타트업 리더(2025 ~ 2026)',
                   '한양대학교 인공지능학 박사과정 (2026 ~ )'
                 ]
               },
@@ -628,13 +628,33 @@ export default function App() {
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-white/10 bg-apex-surface/50 backdrop-blur-sm">
                 <div className="space-y-6">
                   <div>
+                    <div className="text-sm text-apex-blue font-mono mb-1">08.25</div>
+                    <div className="font-bold text-lg">COCREATE PITCH 2026 Seoul 은상</div>
+                    <div className="text-sm text-gray-400 mt-1">알리바바닷컴 주관</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-apex-blue font-mono mb-1">07.19</div>
+                    <div className="font-bold text-lg">안산 스타트업 창업경진대회 장려상</div>
+                    <div className="text-sm text-gray-400 mt-1">안산시, 경기테크노파크 주관</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-apex-blue font-mono mb-1">04.30</div>
+                    <div className="font-bold text-lg">Tex-Corps 2026 실험실 창업 탐색팀 선발</div>
+                    <div className="text-sm text-gray-400 mt-1">과학기술정보통신부 주관</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-apex-blue font-mono mb-1">04.22</div>
+                    <div className="font-bold text-lg">LG 슈퍼스타트 루키 1기 선정</div>
+                    <div className="text-sm text-gray-400 mt-1">LG사이언스파크 주관</div>
+                  </div>
+                  <div>
                     <div className="text-sm text-apex-blue font-mono mb-1">02.21</div>
                     <div className="font-bold text-lg">한양대학교 AI-dea Challenge 최우수상</div>
                     <div className="text-sm text-gray-400 mt-1">한양대학교 주관</div>
                   </div>
                   <div>
                     <div className="text-sm text-apex-blue font-mono mb-1">01.16</div>
-                    <div className="font-bold text-lg">KOIIA AC 배치 프로그램 1기</div>
+                    <div className="font-bold text-lg">KOIIA AC 배치 프로그램 1기 선정</div>
                     <div className="text-sm text-gray-400 mt-1">한국산업지능화협회 주관</div>
                   </div>
                   <div>
@@ -660,7 +680,7 @@ export default function App() {
                   </div>
                   <div>
                     <div className="text-sm text-gray-400 font-mono mb-1">12.24</div>
-                    <div className="font-bold text-lg">한양대 ERICA 산학협력단지 조성사업 선정</div>
+                    <div className="font-bold text-lg">한양대 ERICA 대학 내 산학협력단지 조성사업 선정</div>
                     <div className="text-sm text-gray-500 mt-1">한양대학교 ERICA 주관</div>
                   </div>
                   <div>
