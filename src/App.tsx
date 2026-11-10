@@ -628,6 +628,11 @@ export default function App() {
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-white/10 bg-apex-surface/50 backdrop-blur-sm">
                 <div className="space-y-6">
                   <div>
+                    <div className="text-sm text-apex-blue font-mono mb-1">11.10</div>
+                    <div className="font-bold text-lg">창업동아리 Next Unicorn's Day 우수상</div>
+                    <div className="text-sm text-gray-400 mt-1">한국청년기업가정신재단이사장상 · 교육부 주관</div>
+                  </div>
+                  <div>
                     <div className="text-sm text-apex-blue font-mono mb-1">08.25</div>
                     <div className="font-bold text-lg">COCREATE PITCH 2026 Seoul 은상</div>
                     <div className="text-sm text-gray-400 mt-1">알리바바닷컴 주관</div>
