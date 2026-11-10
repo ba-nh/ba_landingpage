@@ -630,7 +630,7 @@ export default function App() {
                   <div>
                     <div className="text-sm text-apex-blue font-mono mb-1">11.10</div>
                     <div className="font-bold text-lg">창업동아리 Next Unicorn's Day 우수상</div>
-                    <div className="text-sm text-gray-400 mt-1">한국청년기업가정신재단이사장상 · 교육부 주관</div>
+                    <div className="text-sm text-gray-400 mt-1">교육부 주관</div>
                   </div>
                   <div>
                     <div className="text-sm text-apex-blue font-mono mb-1">08.25</div>
